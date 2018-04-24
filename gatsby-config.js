@@ -21,6 +21,6 @@ module.exports = {
     title: 'Callum Fay',
     description: 'Full stack product enginner',
     keywords: 'DevOps, SRE, T shaped Developer, Culture driver, Agile Coach',
-    url: 'https://www.praagya.com'
+    url: 'https://friendly-euclid-5f365e.netlify.com/'
   }
 };
