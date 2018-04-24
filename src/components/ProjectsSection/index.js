@@ -40,7 +40,7 @@ class ProjectsSection extends React.Component {
             subtitle="I use docker quite heavily in my day to day workflow as everything I build is
             with the intention of being containerised or to work in a containerised enviroment. I have used Docker mostly but
             have experience with Rkt and also various orchestration layers such as OShift, K8s and swarm. Also played around
-            with Kata conatiners too."
+            with Kata containers too."
           />
         </div>
       </Section>
