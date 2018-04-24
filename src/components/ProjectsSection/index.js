@@ -2,41 +2,45 @@ import React from 'react'
 import Section from '../Section'
 import ExperienceUnit from '../ExperienceUnit'
 
-import spotifyQuizLogo from '../../assets/images/projects/spotify-quiz.png'
-import littleNomadLogo from '../../assets/images/projects/little-nomad.png'
-import walkthroughViewGif from '../../assets/images/projects/wvwalkthroughview-optimize.gif'
+import redhatLogo from '../../assets/images/projects/rhel-logo.jpg'
+import awsLogo from '../../assets/images/projects/aws-logo.jpg'
+import dockerLogo from '../../assets/images/projects/docker-logo.png'
 
 class ProjectsSection extends React.Component {
   render() {
     return (
-      <Section title="Projects">
+      <Section title="Knowledge of">
         <div className="row">
           <ExperienceUnit
-            logo={littleNomadLogo}
+            logo={awsLogo}
             colour="#FFFFFF"
-            title="Little Nomad"
-            link="https://www.littlenomad.co/"
-            timeperiod="2017 - ???"
-            subtitle="A platform for socially aware travellers. Runs on
-              React+Redux with a Ruby on Rails backend."
+            title="AWS"
+            link="https://www.aws.com/"
+            timeperiod="Cloudformations, EC2, Lambda, Architecture"
+            subtitle="Attended both the developer and architect course.
+            I have also used services in anger for creating three tier model (TIER 1/2 DMZ, TIER Corp)
+            using cloudformation templates and various AWS services"
           />
           <ExperienceUnit
-            logo={spotifyQuizLogo}
-            colour="#20DC6B"
-            title="Music Quiz for Spotify"
-            link="https://quiz.praagya.com/"
-            timeperiod="2017"
-            subtitle="A fun quiz which tests your knowledge of music that
-              you've saved. Built using React/Redux."
+            logo={redhatLogo}
+            colour="#FFFFFF"
+            title="Redhat"
+            link="https://www.redhat.com/"
+            timeperiod="Openshift, Ansible, Cloudforms, Rhel 5-7"
+            subtitle="I have both used Redhat (RHEL 5-7) and deployed rhel solutions
+            (openshift, cloudforms) using redhat tools (satellite server, Ansible tower) to setup PaaS solutions and
+            IaaS solutions."
           />
           <ExperienceUnit
-            logo={walkthroughViewGif}
-            colour="#312F31"
-            title="WalkthroughView"
-            link="https://github.com/praagyajoshi/WVWalkthroughView"
-            timeperiod="2016"
-            subtitle="A drop in utility to help onboard a new user/feature.
-              Written in Objective C."
+            logo={dockerLogo}
+            colour="#FFFFFF"
+            title="Docker"
+            link="https://www.docker.com/"
+            timeperiod="K8s, Docker Swarm, Kata, Rkt"
+            subtitle="I use docker quite heavily in my day to day workflow as everything I build is
+            with the intention of being containerised or to work in a containerised enviroment. I have used Docker mostly but
+            have experience with Rkt and also various orchestration layers such as OShift, K8s and swarm. Also played around
+            with Kata conatiners too."
           />
         </div>
       </Section>

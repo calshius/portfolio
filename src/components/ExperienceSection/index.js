@@ -13,7 +13,7 @@ class ExperienceSection extends React.Component {
         <div className="row">
           <ExperienceUnit
             logo={iomartLogo}
-            colour='#403949'
+            colour='#FFFFFF'
             title='Iomart'
             link='https://www.iomart.com/'
             timeperiod='2012 - 2014'
@@ -22,7 +22,7 @@ class ExperienceSection extends React.Component {
           />
           <ExperienceUnit
             logo={cybgLogo}
-            colour='#CB202D'
+            colour='#FFFFFF'
             title='CYBG'
             link='https://www.cybg.com/'
             timeperiod='2014 - 2017'
