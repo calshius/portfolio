@@ -20,6 +20,7 @@ class About extends Component {
           <li>Ruby (on-rails)</li>
           <li>GatsbyJS</li>
           <li>ReactJS</li>
+          <li>Shell scripting (bash-ksh-zsh)</li>
         </div>
       </div>
     )
