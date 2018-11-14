@@ -9,9 +9,9 @@ import './style.scss'
 const IndexPage = () => (
     <div className="index">
       <div className="main">
-        <h5>
+        <h2>
           Hi, I'm <span className="bold">Callum Alexander Fay</span>
-        </h5>
+        </h2>
 
         <h3 className="bold">
           I'm an SRE that covers all bases in terms of development and infrastructure.
