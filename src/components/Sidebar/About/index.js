@@ -23,6 +23,10 @@ class About extends Component {
           <li>GatsbyJS</li>
           <li>ReactJS</li>
           <li>Shell scripting (bash-ksh-zsh)</li>
+          <h1></h1>
+          Papers & Presentations
+          <li>Paper: <a href="https://docs.google.com/document/d/1LCg-6cQVqo0yLmJGkD4yIA_dcBHvBSqudOf8LZTUYvU/edit?usp=sharing">M.O.S.A.I.C</a></li>
+          <li>Presentation: <a href="https://dev-test-pres.netlify.com">Panoptic Culture</a></li>
         </div>
       </div>
     )
