@@ -142,6 +142,17 @@ class HomeIndex extends React.Component {
                   <td>&nbsp;</td>
                   <td>&nbsp;</td>
                 </tr>
+                <tr>
+                  <td>
+                    &nbsp;<u>IAC/CI-CD Tools</u>
+                  </td>
+                  <td>&nbsp;Ansible</td>
+                  <td>&nbsp;Puppet&nbsp;</td>
+                  <td>&nbsp;Chef</td>
+                  <td>&nbsp;Jenkins</td>
+                  <td>&nbsp;GoCD</td>
+                  <td>&nbsp;</td>
+                </tr>
               </tbody>
             </table>
           </section>
