@@ -1,26 +1,24 @@
 module.exports = {
-  plugins: [
-    'gatsby-plugin-sass',
-    {
-      resolve: `gatsby-plugin-google-fonts`,
-      options: {
-        fonts: [
-          `open sans\:300,600`
-        ]
-      }
-    },
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: "<your-tracking-id-here>",
-        head: true
-      }
-    },
-  ],
   siteMetadata: {
-    title: 'Callum Fay',
-    description: 'Full stack product enginner',
-    keywords: 'DevOps, SRE, T shaped Developer, Culture driver, Agile Coach',
-    url: 'https://friendly-euclid-5f365e.netlify.com/'
-  }
-};
+    title: "Gatsby Starter - Strata by HTML5 UP",
+    author: "Hunter Chang",
+    description: "A Gatsby.js Starter based on Strata by HTML5 UP"
+  },
+  plugins: [
+    'gatsby-plugin-react-helmet',
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: 'gatsby-starter-default',
+        short_name: 'starter',
+        start_url: '/',
+        background_color: '#663399',
+        theme_color: '#663399',
+        display: 'minimal-ui',
+        icon: 'src/assets/images/website-icon.png', // This path is relative to the root of the site.
+      },
+    },
+    'gatsby-plugin-sass',
+    'gatsby-plugin-offline'
+  ],
+}

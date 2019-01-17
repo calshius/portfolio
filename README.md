@@ -1,3 +1,3 @@
-# Callums CV/portfolio
+# Portfolio
 
-This repo is for my own portfolio.
+Current CV for Callum Fay as of January 2019
