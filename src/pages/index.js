@@ -151,7 +151,7 @@ class HomeIndex extends React.Component {
                   <td>&nbsp;Chef</td>
                   <td>&nbsp;Jenkins</td>
                   <td>&nbsp;GoCD</td>
-                  <td>&nbsp;</td>
+                  <td>&nbsp;Docker</td>
                 </tr>
               </tbody>
             </table>
