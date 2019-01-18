@@ -137,9 +137,6 @@ class HomeIndex extends React.Component {
                   <td>&nbsp;ELK</td>
                   <td>&nbsp;TICK&nbsp;</td>
                   <td>&nbsp;Prometheus</td>
-                  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
-                  <td>&nbsp;</td>
                 </tr>
                 <tr>
                   <td>
@@ -157,7 +154,7 @@ class HomeIndex extends React.Component {
           </section>
 
           <section id="two">
-            <h2>Recent Work</h2>
+            <h2>Work history</h2>
 
             <Gallery
               images={DEFAULT_IMAGES.map(

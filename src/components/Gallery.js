@@ -79,7 +79,7 @@ class Gallery extends Component {
     return (
       <div>
         {this.renderGallery()}
-        <Lightbox
+        {/* <Lightbox
           currentImage={this.state.currentImage}
           images={this.props.images}
           isOpen={this.state.lightboxIsOpen}
@@ -88,7 +88,7 @@ class Gallery extends Component {
           onClickPrev={this.gotoPrevious}
           onClickThumbnail={this.gotoImage}
           onClose={this.closeLightbox}
-        />
+        /> */}
       </div>
     )
   }
