@@ -9,36 +9,27 @@ import thumb02 from '../assets/images/thumbs/jpmc.jpg'
 import thumb03 from '../assets/images/thumbs/cybg.jpg'
 import thumb04 from '../assets/images/thumbs/iomart.jpg'
 
-import full01 from '../assets/images/fulls/barclays.png'
-import full02 from '../assets/images/fulls/jpmc.jpg'
-import full03 from '../assets/images/fulls/cybg.jpg'
-import full04 from '../assets/images/fulls/iomart.jpg'
-
 const DEFAULT_IMAGES = [
   {
     id: '1',
-    src: full01,
     thumbnail: thumb01,
     caption: 'Barlcays | 2019-present: Assistant VP',
     description: 'Developer Experience & Cloud Toolchain Engineer',
   },
   {
     id: '2',
-    src: full02,
     thumbnail: thumb02,
     caption: 'JPMC | 2017-2019: Associate',
     description: 'Cloud development & CI-CD',
   },
   {
     id: '3',
-    src: full03,
     thumbnail: thumb03,
     caption: 'CYBG | 2014-2017: Technical Specialist',
     description: 'Sysadmin & Microservice Development',
   },
   {
     id: '4',
-    src: full04,
     thumbnail: thumb04,
     caption: 'Iomart | 2012-2014: Systems Engineer',
     description: 'Cloud Sysadmin & NOC Engineering',
@@ -109,8 +100,8 @@ class HomeIndex extends React.Component {
             <table>
               <tbody>
                 <tr>
-                  <td>
-                    &nbsp;<u>Cloud (on/off prem)</u>
+                  <td class="underline">
+                    &nbsp;Cloud (on/off prem)
                   </td>
                   <td>&nbsp;AWS</td>
                   <td>&nbsp;GKP&nbsp;</td>
@@ -121,7 +112,7 @@ class HomeIndex extends React.Component {
                 </tr>
                 <tr>
                   <td>
-                    &nbsp;<u>Languages</u>
+                    &nbsp;Languages
                   </td>
                   <td>&nbsp;Python 2.7/3+&nbsp;</td>
                   <td>&nbsp;Golang</td>
@@ -132,7 +123,7 @@ class HomeIndex extends React.Component {
                 </tr>
                 <tr>
                   <td>
-                    &nbsp;<u>Toolsets/Stacks</u>
+                    &nbsp;Toolsets/Stacks
                   </td>
                   <td>&nbsp;ELK</td>
                   <td>&nbsp;TICK&nbsp;</td>
@@ -140,7 +131,7 @@ class HomeIndex extends React.Component {
                 </tr>
                 <tr>
                   <td>
-                    &nbsp;<u>IAC/CI-CD Tools</u>
+                    &nbsp;IAC/CI-CD Tools
                   </td>
                   <td>&nbsp;Ansible</td>
                   <td>&nbsp;Puppet&nbsp;</td>
@@ -158,8 +149,7 @@ class HomeIndex extends React.Component {
 
             <Gallery
               images={DEFAULT_IMAGES.map(
-                ({ id, src, thumbnail, caption, description }) => ({
-                  src,
+                ({ id, thumbnail, caption, description }) => ({
                   thumbnail,
                   caption,
                   description,
