@@ -468,12 +468,23 @@ input[type="radio"] {
 	}
 
 	&.thumb {
+		@keyframes bounce {
+			0%, 100% {
+				-webkit-transform: translateY(0);
+				transform: translateY(0);
+				box-shadow: 0 _palette(shadow-1);
+			}
+		
+			20% {
+				-webkit-transform: translateY(-10px);
+				transform: translateY(-10px);
+				box-shadow: 0 10px 10px _palette(shadow-1);
+			}
+		}
 		transition: transform .2s;
 		box-shadow: 0 1px 1px _palette(shadow-1);
 		&:hover {
-			-webkit-transform: translateX(2px);
-			transform: translatey(-3px) translateX(-3px);
-			box-shadow: 3px 3px 3px _palette(shadow-1);
+			animation: bounce 1s;
 		}
 	}
 
