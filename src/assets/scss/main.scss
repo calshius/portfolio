@@ -990,7 +990,7 @@ input[type="button"],
 	@keyframes animatedBackground {
 		0% {
 			background-position: 0 0;
-			background-position-x: -800px;
+			background-position-x: -250px;
 		}
 
 		50% {
@@ -999,7 +999,7 @@ input[type="button"],
 
 		100% {
 			background-position: 0 0;
-			background-position-x: -800px;
+			background-position-x: -250px;
 		}
 	}
 
@@ -1010,8 +1010,7 @@ input[type="button"],
 	url('../images/bg.jpg');
 	background-position: top left,
 	top left;
-	background-repeat: repeat,
-	no-repeat;
+	background-repeat: repeat;
 	overflow: hidden;
 
 	animation: animatedBackground 30s linear infinite;
