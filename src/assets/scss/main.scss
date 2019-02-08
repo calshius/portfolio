@@ -986,12 +986,38 @@ input[type="button"],
 	@include vendor('flex-direction', 'column');
 	@include vendor('align-items', 'flex-end');
 	@include vendor('justify-content', 'space-between');
+
+	@keyframes animatedBackground {
+		0% {
+			background-position: 0 0;
+			background-position-x: -800px;
+		}
+
+		50% {
+			background-position: 0 0;
+		}
+
+		100% {
+			background-position: 0 0;
+			background-position-x: -800px;
+		}
+	}
+
 	background-color: _palette(accent2, bg);
-	background-attachment: scroll, fixed;
-	background-image: url('images/overlay.png'), url('../images/bg.jpg');
-	background-position: top left, top left;
-	background-repeat: repeat, no-repeat;
-	background-size: auto, auto 100%;
+	background-attachment: scroll,
+	fixed;
+	background-image: url('images/overlay.png'),
+	url('../images/bg.jpg');
+	background-position: top left,
+	top left;
+	background-repeat: repeat,
+	no-repeat;
+	overflow: hidden;
+
+	animation: animatedBackground 30s linear infinite;
+	animation-timing-function: ease-in-out;
+	background-size: auto,
+	auto 100%;
 	color: _palette(accent2, fg);
 	height: 100%;
 	left: 0;
