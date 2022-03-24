@@ -31,6 +31,19 @@ export default function AboutMe() {
                 Reach out to me on LinkedIN if you want to speak to me.
               </p>
             </div>
+            <div>
+              <p className="text-lg text-gray-500 mt-4 dark:text-gray-300">
+                --------------------------
+              </p>
+            </div>
+            <div>
+              <h1 className="text-xl font-semibold text-gray-700 dark:text-gray-200">
+                Accolades
+              </h1>
+              <p className="text-lg text-gray-500 mt-4 dark:text-gray-300">
+                Finalist DOEA22 - <a href="https://bit.ly/36kcEX1">Search for ACE!</a>.
+              </p>
+            </div>
             {/* Social Links */}
             <h1 className="text-xl font-semibold text-gray-700 mt-8 dark:text-gray-200">
               Social Links
