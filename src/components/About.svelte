@@ -1,8 +1,9 @@
 <script>
-  import { onMount } from "svelte";
-  import { Chart, registerables } from "chart.js";
-  import ChartDataLabels from "chartjs-plugin-datalabels";
-
+  import { onMount } from 'svelte';
+  import { fade } from 'svelte/transition';
+  import { Chart, registerables } from 'chart.js';
+  import ChartDataLabels from 'chartjs-plugin-datalabels';
+  
   Chart.register(...registerables, ChartDataLabels);
 
   // Skill categories
@@ -104,6 +105,14 @@
   const githubAvatar = "https://github.com/calshius.png";
   const realAvatar = "/selfie.jpg"; // Using the locally saved image
 
+  // Add this line to define the showRealAvatar variable
+  let showRealAvatar = false;
+  
+  // Function to toggle the avatar
+  function toggleAvatar() {
+    showRealAvatar = !showRealAvatar;
+  }
+
   // Search functionality
   let searchQuery = "";
 
@@ -138,6 +147,22 @@
     "#3d5afe", // Bright blue
     "#7b1fa2", // Dark purple
   ];
+
+  // Add a state variable to track whether the chart is visible
+  let isChartVisible = false;
+
+  // Function to toggle chart visibility
+  function toggleChart() {
+    isChartVisible = !isChartVisible;
+    
+    // If we're showing the chart, make sure it's created/updated
+    if (isChartVisible) {
+      // Use setTimeout to ensure the canvas is visible before creating the chart
+      setTimeout(() => {
+        createSkillsChart();
+      }, 50);
+    }
+  }
 
   // Function to create the pie chart
   function createSkillsChart() {
@@ -236,11 +261,10 @@
     });
   }
   onMount(() => {
-    createSkillsChart();
-
-    // Handle window resize
+    // Don't automatically create the chart on mount
+    // Only set up the resize handler
     const handleResize = () => {
-      if (skillsChart) {
+      if (skillsChart && isChartVisible) {
         skillsChart.resize();
       }
     };
@@ -274,19 +298,28 @@
 
   <div class="bio">
     <div class="avatar-container">
-      <div class="avatar-wrapper">
+      <div 
+        class="avatar-wrapper" 
+        on:click={toggleAvatar}
+        on:keydown={e => e.key === 'Enter' && toggleAvatar()}
+        role="button"
+        tabindex="0"
+      >
         <img
           src={githubAvatar}
           alt="Callum Alexander Fay"
           class="avatar github-avatar"
+          style={showRealAvatar ? 'opacity: 0;' : 'opacity: 1;'}
         />
         <img
           src={realAvatar}
           alt="Real Callum Alexander Fay"
           class="avatar real-avatar"
+          style={showRealAvatar ? 'opacity: 1;' : 'opacity: 0;'}
         />
+      </div>      <div class="hover-instruction" style={showRealAvatar ? 'opacity: 0;' : 'opacity: 0.8;'}>
+        Click to reveal the real me!
       </div>
-      <div class="hover-instruction">Hover here to reveal the real me!</div>
     </div>
 
     <div class="text-content">
@@ -344,9 +377,19 @@
       </div>
     </div>
 
-    <div class="chart-container">
-      <canvas bind:this={chartCanvas}></canvas>
+    <!-- Add the toggle button -->
+    <div class="chart-toggle-container">
+      <button class="chart-toggle-button" on:click={toggleChart}>
+        {isChartVisible ? 'Hide Skills Chart' : 'Show Skills Chart'}
+      </button>
     </div>
+
+    <!-- Conditionally render the chart container -->
+    {#if isChartVisible}
+      <div class="chart-container" transition:fade={{ duration: 300 }}>
+        <canvas bind:this={chartCanvas}></canvas>
+      </div>
+    {/if}
 
     {#each skillCategories as category}
       {#if categoryHasMatchingSkills(category) || !searchQuery}
@@ -435,15 +478,6 @@
     margin-top: -5px;
   }
 
-  .avatar-wrapper:hover .github-avatar {
-    opacity: 0;
-  }
-
-  .avatar-wrapper:hover .real-avatar {
-    opacity: 1;
-    margin-top: -5px;
-  }
-
   .hover-instruction {
     position: relative; /* Change from absolute to relative */
     margin-top: 10px; /* Add some space between avatar and text */
@@ -453,10 +487,6 @@
     color: #ec8305;
     opacity: 0.8;
     transition: opacity 0.3s ease;
-  }
-
-  .avatar-wrapper:hover + .hover-instruction {
-    opacity: 0;
   }
 
   .text-content {
@@ -734,5 +764,35 @@
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .chart-toggle-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+  }
+
+  .chart-toggle-button {
+    background-color: #EC8305;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  .chart-toggle-button:hover {
+    background-color: #d97304;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  .chart-toggle-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
   }
 </style>
