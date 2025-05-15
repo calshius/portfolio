@@ -10,7 +10,7 @@
   directory = "netlify/functions"
 
 # For SPA fallback
-[[redirects]]
+[[_redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
