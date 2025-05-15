@@ -1,0 +1,13 @@
+[build]
+  command = "npm run build"
+  publish = "build"
+
+# If you're using SvelteKit's built-in API routes
+[functions]
+  directory = "netlify/functions"
+
+# For SPA fallback
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
