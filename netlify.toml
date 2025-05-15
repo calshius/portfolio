@@ -2,6 +2,9 @@
   command = "npm run build"
   publish = "build"
 
+[build.environment]
+  NODE_VERSION = "18.17.0"
+
 # If you're using SvelteKit's built-in API routes
 [functions]
   directory = "netlify/functions"
