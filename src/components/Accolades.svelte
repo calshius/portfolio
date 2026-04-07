@@ -4,25 +4,25 @@
       title: "Best Use of Microservice Architecture",
       event: "DevOps Excellence Awards 2022",
       result: "Winner",
-      role: "DevOps and Containerisation VP",
+      role: "ACE (Application Container Enablement)",
     },
     {
       title: "Best Use of Artificial Intelligence/Machine Learning",
       event: "US Banking Tech Awards 2025",
       result: "Winner",
-      role: "Principal GenAI VP",
+      role: "DevGenAI",
     },
     {
       title: "Best Use of AI in Banking",
       event: "Global Banking Awards (London) 2025",
       result: "Runner-Up",
-      role: "Principal GenAI VP",
+      role: "DevGenAI",
     },
     {
       title: "Best Use of AI \u2013 Internal Operations",
       event: "Banking Tech Awards 2025",
       result: "Highly Commended",
-      role: "Principal GenAI VP",
+      role: "DevGenAI",
     },
   ];
 
