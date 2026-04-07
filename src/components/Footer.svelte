@@ -1,29 +1,31 @@
 <footer>
   <p>
-    © {new Date().getFullYear()} Callum Alexander Fay. All rights reserved.
+    Loosely inspired by <a href="https://brittanychiang.com/" target="_blank" rel="noopener noreferrer">Brittany Chiang</a>.
+    Built with <a href="https://kit.svelte.dev/" target="_blank" rel="noopener noreferrer">SvelteKit</a> and
+    deployed on <a href="https://www.netlify.com/" target="_blank" rel="noopener noreferrer">Netlify</a>.
   </p>
 </footer>
 
 <style>
   footer {
-    margin-top: 50px;
-    padding: 20px 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    padding: 48px 0 24px;
   }
 
   p {
-    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
-    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0;
   }
 
-  @media (max-width: 768px) {
-    footer {
-      flex-direction: column;
-      text-align: center;
-      gap: 15px;
-    }
+  a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color var(--transition);
+  }
+
+  a:hover {
+    color: var(--accent);
+    text-decoration: underline;
   }
 </style>

@@ -1,164 +1,211 @@
 <script>
-  export let currentSection;
-  export let switchSection;
+  let { activeSection } = $props();
 
-  // Social media links
+  const avatarUrl = "https://avatars.githubusercontent.com/u/24956683?v=4";
+
+  const navItems = [
+    ['about', 'About'],
+    ['experience', 'Experience'],
+    ['accolades', 'Accolades'],
+  ];
+
   const socialLinks = [
-    {
-      name: "GitHub",
-      url: "https://github.com/calshius",
-      icon: "fab fa-github",
-    },
-    {
-      name: "LinkedIn",
-      url: "https://linkedin.com/in/yourusername", // Replace with your actual LinkedIn username
-      icon: "fab fa-linkedin",
-    },
+    { name: "GitHub", url: "https://github.com/calshius", icon: "fab fa-github" },
+    { name: "LinkedIn", url: "https://uk.linkedin.com/in/callum-fay", icon: "fab fa-linkedin-in" },
   ];
 </script>
 
 <header>
-  <div class="logo">
-    <a href="#about" on:click|preventDefault={() => switchSection("about")}
-      >Callum Alexander Fay</a
-    >
-  </div>
+  <div class="header-content">
+    <div class="profile">
+      <img src={avatarUrl} alt="Callum Alexander Fay" class="avatar" />
+      <h1><a href="#about">Callum Alexander Fay</a></h1>
+      <h2>Principal GenAI VP</h2>
+      <p class="tagline">Building scalable AI and cloud-native systems in financial services.</p>
+    </div>
 
-  <div class="right-section">
     <nav>
-      <ul>
-        <li class:active={currentSection === "about"}>
-          <a
-            href="#about"
-            on:click|preventDefault={() => switchSection("about")}>About</a
-          >
-        </li>
-        <li class:active={currentSection === "experience"}>
-          <a
-            href="#experience"
-            on:click|preventDefault={() => switchSection("experience")}
-            >Experience</a
-          >
-        </li>
-      </ul>
-    </nav>
-
-    <div class="social-links">
-      {#each socialLinks as link}
-        <a
-          href={link.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="social-link"
-          aria-label={link.name}
-        >
-          <i class={link.icon}></i>
+      {#each navItems as [key, label]}
+        <a href="#{key}" class:active={activeSection === key}>
+          <span class="nav-indicator"></span>
+          <span class="nav-label">{label}</span>
         </a>
       {/each}
-    </div>
+    </nav>
+
+    <ul class="social-links">
+      {#each socialLinks as link}
+        <li>
+          <a href={link.url} target="_blank" rel="noopener noreferrer" aria-label="{link.name} (opens in a new tab)">
+            <i class={link.icon} aria-hidden="true"></i>
+          </a>
+        </li>
+      {/each}
+    </ul>
   </div>
 </header>
 
 <style>
   header {
+    width: 48%;
+    max-width: 480px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 0;
+    height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: center;
-    padding: 20px 0;
+    padding: 96px 0;
   }
 
-  .logo a {
-    font-size: 24px;
-    font-weight: bold;
+  .header-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  .avatar {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    border: 2px solid var(--border);
+    margin-bottom: 20px;
+    transition: border-color var(--transition);
+  }
+
+  .avatar:hover {
+    border-color: var(--accent);
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+
+  h1 a {
+    color: inherit;
     text-decoration: none;
-    color: white;
-    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
   }
 
-  .right-section {
-    display: flex;
-    align-items: center;
-    gap: 25px;
+  h1 a:hover {
+    color: inherit;
+    text-decoration: none;
   }
 
-  nav ul {
+  h2 {
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+  }
+
+  .tagline {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    max-width: 300px;
+    line-height: 1.6;
+  }
+
+  nav {
     display: flex;
-    list-style: none;
-    gap: 20px;
-    margin: 0;
-    padding: 0;
+    flex-direction: column;
+    gap: 8px;
   }
 
   nav a {
+    display: flex;
+    align-items: center;
+    gap: 16px;
     text-decoration: none;
-    color: white;
-    font-weight: 500;
-    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
-    padding: 5px 0;
-    transition: all 0.3s ease;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 4px 0;
+    transition: color var(--transition);
   }
 
-  .active a {
-    color: #ec8305;
-    border-bottom: 2px solid #ec8305;
-    font-weight: bold;
+  nav a:hover,
+  nav a.active {
+    color: var(--text);
+    text-decoration: none;
   }
 
-  nav a:hover {
-    color: #ec8305;
+  .nav-indicator {
+    display: block;
+    width: 32px;
+    height: 1px;
+    background: var(--text-muted);
+    transition: all var(--transition);
+  }
+
+  nav a:hover .nav-indicator,
+  nav a.active .nav-indicator {
+    width: 64px;
+    background: var(--text);
   }
 
   .social-links {
+    list-style: none;
     display: flex;
     gap: 20px;
+    margin-top: auto;
   }
 
-  .social-link {
-    color: #ec8305;
+  .social-links a {
+    color: var(--text-muted);
+    font-size: 1.3rem;
+    transition: color var(--transition);
+  }
+
+  .social-links a:hover {
+    color: var(--text);
     text-decoration: none;
-    font-size: 1.5rem;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.1);
-  }
-
-  .social-link:hover {
-    color: white;
-    background-color: #ec8305;
-    transform: translateY(-3px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
 
   @media (max-width: 768px) {
-    .right-section {
-      gap: 15px;
-    }
-
-    nav ul {
-      gap: 15px;
-    }
-
-    .social-link {
-      width: 30px;
-      height: 30px;
-      font-size: 1rem;
-    }
-  }
-
-  @media (max-width: 480px) {
     header {
-      flex-direction: column;
-      gap: 15px;
+      width: 100%;
+      max-width: none;
+      position: relative;
+      height: auto;
+      padding: 48px 0 0;
     }
 
-    .right-section {
-      width: 100%;
-      justify-content: space-between;
+    .header-content {
+      height: auto;
+      gap: 24px;
+    }
+
+    .profile {
+      text-align: center;
+    }
+
+    .avatar {
+      width: 80px;
+      height: 80px;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+    }
+
+    .tagline {
+      max-width: none;
+    }
+
+    nav {
+      display: none;
+    }
+
+    .social-links {
+      margin-top: 0;
+      justify-content: center;
     }
   }
 </style>
