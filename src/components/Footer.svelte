@@ -1,6 +1,5 @@
 <footer>
   <p>
-    Loosely inspired by <a href="https://brittanychiang.com/" target="_blank" rel="noopener noreferrer">Brittany Chiang</a>.
     Built with <a href="https://kit.svelte.dev/" target="_blank" rel="noopener noreferrer">SvelteKit</a> and
     deployed on <a href="https://www.netlify.com/" target="_blank" rel="noopener noreferrer">Netlify</a>.
   </p>
