@@ -29,8 +29,9 @@
   const patents = [
     {
       title: "Dynamic Agent Runtime Engine for Configurable Multi-Agent Pipelines",
-      status: "Pending",
+      status: "Granted",
       office: "USPTO",
+      url: "https://patentsgazette.uspto.gov/week24/OG/html/1547-3/US12657022-20260616.html",
     },
     {
       title: "Using LLM to Increase Productivity for Large-Scale Regulatory Project Maintenance",
@@ -44,6 +45,12 @@
     if (result === 'Winner') return 'badge-winner';
     if (result === 'Runner-Up') return 'badge-runner-up';
     return 'badge-commended';
+  }
+
+  /** @param {string} status */
+  function patentBadgeClass(status) {
+    if (status === 'Granted') return 'badge-granted';
+    return 'badge-pending';
   }
 </script>
 
@@ -70,10 +77,13 @@
   {#each patents as patent}
     <div class="item">
       <div class="item-header">
-        <span class="badge badge-pending">{patent.status}</span>
+        <span class="badge {patentBadgeClass(patent.status)}">{patent.status}</span>
       </div>
       <div class="item-body">
         <h3>{patent.title}</h3>
+        {#if patent.url}
+          <p class="meta"><a href={patent.url} target="_blank" rel="noopener noreferrer">View patent</a></p>
+        {/if}
         <span class="tag">{patent.office}</span>
       </div>
     </div>
@@ -154,6 +164,11 @@
     background: var(--bg-elevated);
     color: var(--text-muted);
     border: 1px solid var(--border-muted);
+  }
+
+  .badge-granted {
+    background: var(--success-subtle);
+    color: var(--success);
   }
 
   h3 {
