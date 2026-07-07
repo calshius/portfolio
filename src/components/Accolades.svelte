@@ -19,7 +19,7 @@
       role: "DevGenAI",
     },
     {
-      title: "Best Use of AI \u2013 Internal Operations",
+      title: "Best Use of AI – Internal Operations",
       event: "Banking Tech Awards 2025",
       result: "Highly Commended",
       role: "DevGenAI",
@@ -37,6 +37,12 @@
       title: "Using LLM to Increase Productivity for Large-Scale Regulatory Project Maintenance",
       status: "Pending",
       office: "USPTO",
+    },
+    {
+      title: "Automated regulatory reporting system using large language models",
+      status: "Granted",
+      office: "USPTO",
+      url: "https://ppubs.uspto.gov/api/pdf/downloadPdf/US-12664376-B1?source=USPAT&requestToken=eyJzdWIiOiJjOTZmMjgzOC0wYWJiLTQ4NmMtODhkNS1mZjdmZWM5OTI2NzQiLCJ2ZXIiOiI1M2U4ODYzOC05YjliLTQ3MTMtYWU3Ni00Zjk4ZWFhOWZiN2QiLCJleHAiOjB9",
     },
   ];
 
