@@ -31,7 +31,7 @@
       title: "Dynamic Agent Runtime Engine for Configurable Multi-Agent Pipelines",
       status: "Granted",
       office: "USPTO",
-      url: "https://patentsgazette.uspto.gov/week24/OG/html/1547-3/US12657022-20260616.html",
+      url: "https://ppubs.uspto.gov/api/pdf/downloadPdf/US-12657022-B1?source=USPAT&requestToken=eyJzdWIiOiJjOTZmMjgzOC0wYWJiLTQ4NmMtODhkNS1mZjdmZWM5OTI2NzQiLCJ2ZXIiOiI1M2U4ODYzOC05YjliLTQ3MTMtYWU3Ni00Zjk4ZWFhOWZiN2QiLCJleHAiOjB9",
     },
     {
       title: "Using LLM to Increase Productivity for Large-Scale Regulatory Project Maintenance",
